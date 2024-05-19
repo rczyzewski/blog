@@ -13,12 +13,12 @@ description: |
 # Using Anki
 
 As the first post in a blog is the hardest, let's take it easy and write a few sentences about
-using `Anki` - https://apps.ankiweb.net/
+using [Anki](https://apps.ankiweb.net/)
 
 In a nutshell: you have a deck of cards: with question in the front and the answer in the back. You pick a card from the
 top of the deck. Remind yourself the answer, confront with the answer from the back of the card. Evaluate your answer.
 The better/faster you recall the right answer, the longer might be the period for the next reminder.
-So the idea is super simple, moreover https://ankiweb.net/shared/decks provide many decs that might be easy for the
+So the idea is super simple, moreover Anki  provide many [decs](https://ankiweb.net/shared/decks), that might be easy for the
 start.
 
 However, I have found that using a decs that someone already has prepared for me just doesn't work, at least for me.
@@ -26,10 +26,10 @@ When looking at words in a different language, they many seems to be just a coll
 sight it's not a big difference between those words, and telephone numbers.
 In order to avoid such situations I'm creating my own decks wile reading a books - so I know the context of the word.
 
-As I'm a developer, I have a set of scripts that are collecting vocabluary from kindle. Then there is a web interface to
-enrich those words with transalationn and usage from online resources.
+As I'm a developer, I have a set of scripts that are collecting vocabulary from Kindle. Then there is a web interface to
+enrich those words with translation and usage from online resources.
 This way I can decide if the word is not a mistake, translation is clear, examples are vivid and significant.  
-It all goes well, but many of those words are for me just one occurrences: so there was just one place where I have
+It all goes well, but many of those words are for me just one occurrence: so there was just one place where I have
 found tose words, put into Anki, and now struggling to remember them.
 
 So my basic idea is to use the data from https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Spanish . 
@@ -47,10 +47,9 @@ word3_count word3
 word4_count word4
 ```
 To avoid doing this manually, I have been trying to use ItellJ `Replace in Files` that supports multiline replacements. 
-So I in a find input I have typed: 
-```
-(?<t>\d\d*?)
-```
+So all I needed to do, to change the format of the file, was like: 
+ which is shown in the screenshot below:
+![PyCharm - Replace in Files](/assets/posts/multiline_replacement.png)
 
 
 

@@ -12,8 +12,10 @@ For sure there is much more for development than just editing text files,
 but from other perspective it's also a part of the process. 
 Data from the internet that I wanted to use, were coming in an incorrect format: there was missing 5k new line characters.
 
-Original format:
-```1234 abc 1211 cda 1120 rpm```
+Original format is:
+```
+1234 abc 1211 cda 1120 rpm
+```
 What I needed to enrich a script, was a different format of the file:
 ```
 1234 abc 

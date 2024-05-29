@@ -157,11 +157,11 @@ Step by step:
 
 For now let's assume just the enigne is broken, and we are missing competences to fix the engine.
 
-```jshelllanguage
+{% highlight java linenos %}
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .rebuildWith(EngineProvider.get(brokenCar))
   .apply(brokenCar);
-```
+{% highlight %}
 
 Let's anlayze it deeper:
 ```Lens.focuss(Car.Lenses.engine)``` create a 'lens', that allow for a given car focuss and replace an engine.

@@ -41,7 +41,7 @@ So the driver is not assigned to a car, driver just need a car. So from a driver
 and the car is returned from mecanic.
 So in his case situation might look like this:
 
-```jshelllanguage
+```java
 Car repairPinchedTire(Car brokenCar) {
   var brokenTire = brokenCar.getFrontLeftTire();
   var fixedTire = brokenTire.withPreassure(2.2f);
@@ -87,7 +87,7 @@ So the full process will look like:
 
 Before going directly to job, let's first take a detailed look at clases that are related to car:
 
-```jshelllanguage
+```java
 
 @With
 @Value
@@ -171,13 +171,13 @@ Those lines are creating a recipe, for replacing the broken engine. The replacem
 function to a broken car.
 The behavior is exactly like below, except that we are focused on a function composition, that later can be applied.
 
-```jshelllanguage
+```java
 Car repariedCar = brokenCar.withEngine(EngineProvider.get(brokenCar));
 ```
 
 At this point, uisng lenses is for sure overkill. After some time we might get competnces to repair engines.
 
-```jshelllanguage
+```java
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .focus(Engine.Lenses.piston)
   .focus(Piston.Lenses.operational)
@@ -187,7 +187,7 @@ Car repairedCar = Lens.focus(Car.Lenses.engine)
 
 At this level function compostion is getting more complicated. Let's combine it with spark plug replacement.
 
-```jshelllanguage
+```java
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .split(Lens.focus(Engine.Lenses.sparkPlug)
     .focus(SparkPlug.Lenses.state)

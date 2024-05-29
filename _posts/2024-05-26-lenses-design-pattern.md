@@ -27,7 +27,7 @@ What will happen, mechanic will get a pinched tire, take it off, fix it, put it 
 Motorization business is operating like this for more than a hundred years.
 This is how mutable data structe works.
 
-```java
+```jshelllanguage
 Car repairPinchedTire(Car brokenCar) {
   return brokenCar.getFrontLeftTire().setPreasure(2.2f);
 }
@@ -41,7 +41,7 @@ So the driver is not assigned to a car, driver just need a car. So from a driver
 and the car is returned from mecanic.
 So in his case situation might look like this:
 
-```java
+```jshelllanguage
 Car repairPinchedTire(Car brokenCar) {
   var brokenTire = brokenCar.getFrontLeftTire();
   var fixedTire = brokenTire.withPreassure(2.2f);
@@ -87,7 +87,7 @@ So the full process will look like:
 
 Before going directly to job, let's first take a detailed look at clases that are related to car:
 
-```java
+```jshelllanguage
 
 @With
 @Value
@@ -157,7 +157,7 @@ Step by step:
 
 For now let's assume just the enigne is broken, and we are missing competences to fix the engine.
 
-```java
+```jshelllanguage
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .rebuildWith(EngineProvider.get(brokenCar))
   .apply(brokenCar);
@@ -171,13 +171,13 @@ Those lines are creating a recipe, for replacing the broken engine. The replacem
 function to a broken car.
 The behavior is exactly like below, except that we are focused on a function composition, that later can be applied.
 
-```java
+```jshelllanguage
 Car repariedCar = brokenCar.withEngine(EngineProvider.get(brokenCar));
 ```
 
 At this point, uisng lenses is for sure overkill. After some time we might get competnces to repair engines.
 
-```java
+```jshelllanguage
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .focus(Engine.Lenses.piston)
   .focus(Piston.Lenses.operational)
@@ -187,7 +187,7 @@ Car repairedCar = Lens.focus(Car.Lenses.engine)
 
 At this level function compostion is getting more complicated. Let's combine it with spark plug replacement.
 
-```java
+```jshelllanguage
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .split(Lens.focus(Engine.Lenses.sparkPlug)
     .focus(SparkPlug.Lenses.state)
@@ -214,16 +214,9 @@ Would I use this code in production? No. Let me explain:
 * pattern is not well known - though is harder to adopt in a team of developers
 
 Are there any advantages of this pattern? 
-* yes, but require fairy complex composition of the objects, to make it shine
+* yes, but require helper object to make it shine
 * promotes composition of functions, that change the way of thinking about the code
 
-[//]: # (Assuming that the lombok will provide `@Lenses` annotation, making the boilerplate that has been created, might make a)
-[//]: # (change. The same thing had happened with the builder pattern: although it's one of the most known and used design)
-[//]: # (patterns, before `lombok` using it was a nightmare: generated boilerplate, that needed to be read. With each renamed)
-[//]: # (property, the builder need to be renamed too.)
-[//]: # (As both lombok and the lombok plugin for IntelliJ works extremely well, `builders` are doing its job: making creating of)
-[//]: # (object more readable, without most of the boilerplate. On the other hand, `Lenses` do not seem to be that useful and)
-[//]: # (ubiquitous.)
 
 Why to bother with yourself with these pieces of code? Because it's the excersise for composition of functions. It's a
 kind of food for a brain. It might happen that sooner or later someone will stumble upoon a problem where such a

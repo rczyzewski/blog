@@ -161,9 +161,9 @@ For now let's assume just the enigne is broken, and we are missing competences t
 Car repairedCar = Lens.focus(Car.Lenses.engine)
   .rebuildWith(EngineProvider.get(brokenCar))
   .apply(brokenCar);
-{% highlight %}
+{% endhighlight %}
 
-Let's anlayze it deeper:
+Let's analyze it deeper:
 ```Lens.focuss(Car.Lenses.engine)``` create a 'lens', that allow for a given car focuss and replace an engine.
 ``rebuildWith(EngineProvider.get(brokenCar))`` returns a function, accepting a Car, and returning a Car, it will be
 constructed with a new engine from `EngineProvider`.

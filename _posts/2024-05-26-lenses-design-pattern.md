@@ -27,7 +27,7 @@ What will happen, mechanic will get a pinched tire, take it off, fix it, put it 
 Motorization business is operating like this for more than a hundred years.
 This is how mutable data structe works.
 
-```jshelllanguage
+```java 
 Car repairPinchedTire(Car brokenCar) {
   return brokenCar.getFrontLeftTire().setPreasure(2.2f);
 }

@@ -29,7 +29,7 @@ The examples below are written in Java. The full code is available as
 a [gist](https://gist.github.com/rczyzewski/14cfbe4c676d29297cf5f863c27e7112). There is one common interface used for
 all cases:
 
-```jshelllanguage
+```java
 
   interface Person {
     String getName();
@@ -88,7 +88,7 @@ constructor `Person(Person person)`.
 
 Let's consider the relations between two object persons, one constructed with a copying constructor.
 
-```jshelllanguage
+```java
 
   @Test
   void shallowCopy1() {
@@ -137,8 +137,7 @@ The deep copy concept is very similar to a shallow copy: with one key difference
 recursively too. Changing the example from the previous part, the main difference will be about a mutable property:
 hobbies. In our case, this mutable element is the List of hobbies.
 
-```jshelllanguage
-
+```java
   @Data
   @AllArgsConstructor
   public static class DeepPerson implements Person {
@@ -150,7 +149,6 @@ hobbies. In our case, this mutable element is the List of hobbies.
       this(person.getName(), person.getHeight(), new ArrayList<>(person.getHobbies()));
     }
   }
-
 ```
 
 The difference is that when we are changing the object of hobbies: when we are deep copying we are creating a new
@@ -164,7 +162,7 @@ immutability stands for: `being unable to be changed`. The very standard example
 already have seen its behavior in both shallow and deep copy examples. This time let's take a look String object, and
 how it is assigned to a variable.
 
-```jshelllanguage
+```java
   String str = "String";
   String strOriginal = str;
   str.toUpperCase();
@@ -189,7 +187,7 @@ are modifications to the original one: for example with a method `toUpperCase`.
 
 Let's now make our class implement a Person, behaving like that.
 
-```jshelllanguage
+```java
 
   @Value
   @With
@@ -214,7 +212,7 @@ object is not the same object, where the method has been invoked. It's a differe
 The 'name' is referencing a different string, than in the original object. The references to the second attribute is
 referring the same object, as the original immutable person.
 
-```jshelllanguage
+```java
 
   ImmutablePerson p1 = new ImmutablePerson("Hannah", 153, List.of());
   ImmutablePerson p2 = p1;

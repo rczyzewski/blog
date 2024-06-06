@@ -8,7 +8,6 @@ tags: [ java ]
 description: |
   Describes the difference between shallow/deep copy of an object. Then it explains the immutability concept based on a 
   `String` class, finally presents an immutable alternative to previous examples.
-
 ---
 
 ## Intro

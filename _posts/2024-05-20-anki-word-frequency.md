@@ -3,7 +3,8 @@ title: 'Adding a required new line characters'
 subtitle: "editing test files"
 author:
   - rczmdp
-tags: [editing, vim]
+tags: [editing, vim, anki]
+categories: [ intellij ]
 description: |
  Programming is all about editing text files, so let's master this skill.   
 ---

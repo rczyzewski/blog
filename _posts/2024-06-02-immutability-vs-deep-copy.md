@@ -10,8 +10,6 @@ description: |
   `String` class, finally presents an immutable alternative to previous examples.
 ---
 
-## Intro
-
 This blog is gaining readers: my friend has reviewed the article about
 the [lenses](https://rczyzewski.github.io/blog/posts/lenses-design-pattern/), which describes the construction of an
 immutable object, composed of possibly many layers of immutable objects. He was curious about the relationship

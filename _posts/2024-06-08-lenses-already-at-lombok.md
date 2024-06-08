@@ -45,11 +45,11 @@ movie = movie.withDirectorBy(d -> d.withBirthDateBy(bd -> bd.plusDays(1)));
 The difference will be growing, with the growing hierarchy of the object. 
 
 Related links: 
-* The source code : https://github.com/projectlombok/lombok/blob/master/src/core/lombok/experimental/WithBy.java
-* Java docs: https://javadoc.io/doc/org.projectlombok/lombok/latest/lombok/experimental/WithBy.html
-* No documentation for the @WithBy:  https://projectlombok.org/features/experimental/WithBy
+* The source [code](https://github.com/projectlombok/lombok/blob/master/src/core/lombok/experimental/WithBy.java)
+* Java [docs](https://javadoc.io/doc/org.projectlombok/lombok/latest/lombok/experimental/WithBy.html)
+* No documentation for the @WithBy: [404](https://projectlombok.org/features/experimental/WithBy)
 * GitHub issue: https://github.com/projectlombok/lombok/issues/2368
-* lombok intellij plugin: https://plugins.jetbrains.com/plugin/6317-lombok/versions
-* github repo for intellij plugin https://github.com/mplushnikov/lombok-intellij-plugin
+* lombok intellij [plugin](https://plugins.jetbrains.com/plugin/6317-lombok/versions)
+* lombok intellij github [repo](https://github.com/mplushnikov/lombok-intellij-plugin)
 
 
